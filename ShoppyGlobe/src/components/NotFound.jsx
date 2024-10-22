@@ -5,7 +5,7 @@ function NotFound(){
               const err = useRouteError();
               return (
                             <>
-                            <h1>OPpps!!!</h1>
+                            <h1>Opps!!</h1>
                             <h1>{err.status}</h1>
                             <h2>{err.statusText}</h2>
                             <h2>{err.data}</h2>

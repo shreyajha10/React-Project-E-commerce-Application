@@ -1,12 +1,19 @@
+import React, {lazy,Suspense} from 'react'
+
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import App from './App.jsx'
 // import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import NotFound from './components/NotFound.jsx';
-import Cart from './components/Cart.jsx';
-import ProductList from './components/ProductList.jsx';
-import ProductDetails from './components/ProductDetails.jsx';
+// import Cart from './components/Cart.jsx';
+// import ProductList from './components/ProductList.jsx';
+// import ProductDetails from './components/ProductDetails.jsx';
+
+const ProductList = lazy(() => import("./components/ProductList.jsx"));
+const Cart = lazy(() => import("./components/Cart.jsx"));
+const ProductDetails = lazy (() => import("./components/ProductDetails.jsx"));
+
 
 
 const appRoute = createBrowserRouter(
@@ -18,13 +25,14 @@ const appRoute = createBrowserRouter(
       children:[
         {
           path:"/",
-          element:<ProductList/>
+          element:( <Suspense fallback={<p>Loading Products...</p>}> <ProductList/></Suspense>)
 
         },
 
         {
           path:"/cart",
-          element:<Cart/>
+          element:(
+          <Suspense fallback={<p>Loading Cart...</p>}><Cart/></Suspense>)
         },
         {
           path:"/search",
@@ -33,7 +41,7 @@ const appRoute = createBrowserRouter(
         },
         {
           path:"/product/:id",
-          element:<ProductDetails/>
+          element:(<Suspense fallback={<p>Loading Product Details...</p>}><ProductDetails/></Suspense>)
         }
 
       ],

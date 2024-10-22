@@ -20,6 +20,7 @@ function Header() {
           <Link to="/" className="link-sty" onClick={handleHomeClick}>
             <li>Home</li>
           </Link>
+          
          
           <Link to="/cart" className="link-sty cart-container">
             <li>
