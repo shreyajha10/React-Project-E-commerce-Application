@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { setSearchTerm } from '../utils/cartSlice'; // Import the action
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setSearchTerm } from "../utils/cartSlice";
 
 const Search = () => {
   const [inputValue, setInputValue] = useState(""); // Local state to hold the input value
   const dispatch = useDispatch();
 
   const handleInputChange = (event) => {
-    setInputValue(event.target.value); // Update local state with search term
+    setInputValue(event.target.value);
   };
 
   const handleSearchClick = () => {
@@ -20,9 +20,9 @@ const Search = () => {
         type="text"
         placeholder="Search products..."
         value={inputValue}
-        onChange={handleInputChange} // Update input value on change
+        onChange={handleInputChange}
       />
-      <button onClick={handleSearchClick}>Search</button> {/* Button to trigger search */}
+      <button onClick={handleSearchClick}>Search</button>{" "}
     </div>
   );
 };

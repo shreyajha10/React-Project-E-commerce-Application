@@ -9,10 +9,10 @@ function Header() {
   const cartItems = useSelector((store) => store.cart.items);
   const dispatch = useDispatch();
 
-  const handleHomeClick =() => {
+  const handleHomeClick = () => {
     dispatch(setSearchTerm(""));
-  }
- 
+  };
+
   return (
     <>
       <div className="header">
@@ -20,8 +20,7 @@ function Header() {
           <Link to="/" className="link-sty" onClick={handleHomeClick}>
             <li>Home</li>
           </Link>
-          
-         
+
           <Link to="/cart" className="link-sty cart-container">
             <li>
               <img
@@ -33,10 +32,9 @@ function Header() {
               Cart
             </li>
           </Link>
-          <li><Search/></li>
-          
-
-        
+          <li>
+            <Search />
+          </li>
         </ul>
       </div>
     </>

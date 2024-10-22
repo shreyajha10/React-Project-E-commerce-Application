@@ -10,26 +10,22 @@ const CartItem = ({ item }) => {
   };
 
   return (
-   
     <div className="cart-card">
-        <div className="cart-item">
-      
-          <img
-            src={item.thumbnail}
-            alt={item.title}
-            width="200px"
-            height="200px"
-            className="thumbnail"
-          />
-          <h3 className="product-title">{item.title}</h3>
-          <p className="product-description">{item.description}</p>
-          <p className="product-price">Price: {item.price}</p>
-         
+      <div className="cart-item">
+        <img
+          src={item.thumbnail}
+          alt={item.title}
+          width="200px"
+          height="200px"
+          className="thumbnail"
+        />
+        <h3 className="product-title">{item.title}</h3>
+        <p className="product-description">{item.description}</p>
+        <p className="product-price">Price: {item.price}</p>
 
-         
-          <button onClick={handleRemoveItem}>Remove</button>
-        </div>
+        <button onClick={handleRemoveItem}>Remove</button>
       </div>
+    </div>
   );
 };
 export default CartItem;

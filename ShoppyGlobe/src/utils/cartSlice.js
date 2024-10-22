@@ -1,11 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
 const cartSlice = createSlice({
   name: "cart",
   initialState: {
     items: [],
-    searchTerm: '',
+    searchTerm: "",
   },
   reducers: {
     addItem: (state, action) => {
@@ -14,13 +13,14 @@ const cartSlice = createSlice({
     removeItem: (state, action) => {
       state.items.pop();
     },
-    clearCart: (state,action) => {
-              state.items.length =0;
+    clearCart: (state, action) => {
+      state.items.length = 0;
     },
     setSearchTerm: (state, action) => {
       state.searchTerm = action.payload;
-    }
+    },
   },
 });
- export const {addItem,removeItem,clearCart,setSearchTerm} = cartSlice.actions;
+export const { addItem, removeItem, clearCart, setSearchTerm } =
+  cartSlice.actions;
 export default cartSlice.reducer;
